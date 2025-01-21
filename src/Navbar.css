@@ -1,0 +1,47 @@
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+}
+
+nav::before {
+    content: '';
+    display: block;
+    background: linear-gradient(var(--color-darkblue), transparent);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    transition: opacity 0.4s ease-out;
+    opacity: 0;
+}
+
+nav.occlude::before {
+    opacity: 1;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 2em;
+    padding-bottom: 2em;
+    gap: 6em;
+    position: relative;
+    left: -2rem;
+}
+
+#name a {
+    text-decoration: none;
+}
+
+#name {
+    font-family: 'Victor Mono Italic';
+    font-size: 2rem;
+    font-weight: 700;
+}

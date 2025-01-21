@@ -1,0 +1,12 @@
+#projects {
+    height: 100vh;
+    padding-top: 2em;
+}
+
+#projects h1 {
+    font-weight: 400;
+    text-decoration: underline;
+    text-align: center;
+    /* font-size: 2rem; */
+    font-size: 50px;
+}

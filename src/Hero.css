@@ -1,0 +1,82 @@
+header {
+    position: relative;
+    overflow: hidden;
+}
+
+header .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100%;
+    background: linear-gradient(transparent, var(--color-darkblue));
+    padding-bottom: 8em;
+}
+
+header .bg {
+    background-image: url('/images/Vattenfall-01.jpg');
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    transition: transform 0.4s ease-out;
+}
+
+.bg.zoom {
+    transform: scale(1.1);
+}
+
+header h1 {
+    font-size: 3rem;
+    font-weight: 400;
+    text-align: center;
+    max-width: 20em;
+    line-height: 1.5;
+    margin-top: 6em;
+}
+
+header .button {
+    margin-top: 2em;
+}
+
+#see-projects {
+    justify-self: flex-end;
+    margin-top: 12em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2em;
+}
+
+#arrow {
+    --stroke-width: 2px;
+    --stem: 1.6em;
+    --wings: 0.7em;
+    background-color: white;
+    width: var(--stroke-width);
+    height: var(--stem);
+    position: relative;
+    border-radius: 2px 2px 0 0;
+}
+
+#arrow::before,
+#arrow::after {
+    content: '';
+    display: block;
+    transform-origin: bottom right;
+    height: var(--stroke-width);
+    width: var(--wings);
+    background-color: white;
+    position: absolute;
+    right: 1px;
+    border-radius: 2px 0 0 2px;
+    bottom: -2px;
+    transform: rotate(45deg);
+}
+
+#arrow::after {
+    transform: rotate(135deg) translateY(var(--stroke-width));
+}
