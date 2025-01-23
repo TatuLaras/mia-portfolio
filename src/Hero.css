@@ -1,0 +1,47 @@
+header {
+    position: relative;
+    overflow: hidden;
+}
+
+header .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100%;
+    background: linear-gradient(transparent, var(--color-darkblue));
+    padding-bottom: 8em;
+}
+
+header .bg {
+    background-image: url('/images/Vattenfall-01.jpg');
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    transition: transform 0.4s ease-out;
+}
+
+.bg.zoom {
+    transform: scale(1.1);
+}
+
+header h1 {
+    font-size: 3rem;
+    font-weight: 400;
+    text-align: center;
+    max-width: 20em;
+    line-height: 1.5;
+    margin-top: 6em;
+}
+
+header .button {
+    margin-top: 2em;
+}
+
+header .arrow-button {
+    margin-top: 12em;
+}

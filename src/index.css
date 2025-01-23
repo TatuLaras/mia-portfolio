@@ -1,0 +1,39 @@
+@font-face {
+    font-family: 'Victor Mono';
+    src: url('/fonts/VictorMono-VariableFont_wght.ttf');
+}
+
+@font-face {
+    font-family: 'Victor Mono Italic';
+    src: url('./../public/fonts/VictorMono-Italic-VariableFont_wght.ttf');
+}
+
+:root {
+    --color-darkblue: #00121a;
+    --color-pastelblue: #65ab9e;
+    font-family: 'Victor Mono';
+
+    color: white;
+    font-size: 17px;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--color-darkblue);
+}
+
+a {
+    color: white;
+}
+
+section > h1 {
+    font-weight: 400;
+    text-decoration: underline;
+    text-align: center;
+    font-size: 3rem;
+}
+
+section {
+    padding-top: 2.4em;
+    padding-bottom: 6em;
+}

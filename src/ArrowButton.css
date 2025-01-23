@@ -1,0 +1,38 @@
+.arrow-button {
+    justify-self: flex-end;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2em;
+    margin-top: 1rem;
+}
+
+.arrow-button .arrow {
+    --stroke-width: 2px;
+    --stem: 1.6em;
+    --wings: 0.7em;
+    background-color: white;
+    width: var(--stroke-width);
+    height: var(--stem);
+    position: relative;
+    border-radius: 2px 2px 0 0;
+}
+
+.arrow-button .arrow::before,
+.arrow-button .arrow::after {
+    content: '';
+    display: block;
+    transform-origin: bottom right;
+    height: var(--stroke-width);
+    width: var(--wings);
+    background-color: white;
+    position: absolute;
+    right: 1px;
+    border-radius: 2px 0 0 2px;
+    bottom: -2px;
+    transform: rotate(45deg);
+}
+
+.arrow-button .arrow::after {
+    transform: rotate(135deg) translateY(var(--stroke-width));
+}

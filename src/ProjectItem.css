@@ -1,0 +1,36 @@
+.project-item {
+    cursor: pointer;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 12em;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    overflow: hidden;
+}
+
+.project-item,
+.project-item .bg {
+    border-radius: 0.4rem;
+}
+
+.project-item h2 {
+    padding: 0.4em 1em;
+}
+
+.project-item .bg {
+    background-image: var(--img);
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    transition: transform 0.3s ease-out;
+}
+
+.project-item:hover .bg {
+    transform: scale(1.08);
+}
