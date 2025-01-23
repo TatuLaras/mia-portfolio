@@ -1,0 +1,7 @@
+.button {
+    background-color: var(--color-pastelblue);
+    padding: 0.8em 2.4em;
+    font-size: 1.4rem;
+    text-decoration: none;
+    border-radius: 0.4rem;
+}

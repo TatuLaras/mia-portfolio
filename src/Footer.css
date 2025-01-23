@@ -1,0 +1,12 @@
+footer {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    padding: 7em 0;
+    margin-top: 5em;
+}
+
+footer a {
+    color: black;
+    font-weight: 600;
+}

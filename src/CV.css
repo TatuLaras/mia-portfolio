@@ -1,0 +1,12 @@
+#cv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#cv .button {
+    margin-top: 4em;
+}
+#cv .arrow-button {
+    margin-top: 28em;
+}
