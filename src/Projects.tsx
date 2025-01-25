@@ -31,7 +31,6 @@ export default function Projects() {
                             key={project.title}
                             project={project}
                             onClick={() => onProjectClick(project)}
-                            onMouseOver={() => setSelectedProject(project)}
                         />
                     ))}
                 </>

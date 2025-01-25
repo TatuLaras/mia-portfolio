@@ -21,7 +21,7 @@ export default function Hero() {
     };
 
     return (
-        <header>
+        <header id="about">
             <div className="bg" ref={bgRef}></div>
             <div className="content">
                 <h1>Designer with focus withing layout and editorial.</h1>

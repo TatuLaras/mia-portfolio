@@ -9,9 +9,11 @@ export default function Images({ mainImage, otherImages }: Props) {
     const [mainImageAspectRatio, setMainImageAspectRatio] = useState(1);
     const [mainImageSrc, setMainImageSrc] = useState('');
 
-    const otherImagesRef = useRef<HTMLDivElement | null>(null);
-    const [_otherImagesOverflowing, setOtherImagesOverflowing] =
-        useState(false);
+    const imageContainerRef = useRef<HTMLDivElement | null>(null);
+    const [otherImagesOverflowing, setOtherImagesOverflowing] = useState(false);
+
+    const [atScrollStart, setAtScrollStart] = useState(true);
+    const [atScrollEnd, setAtScrollEnd] = useState(false);
 
     useEffect(() => {
         // Find out and store image aspect ratio so we can preserve it when
@@ -32,13 +34,33 @@ export default function Images({ mainImage, otherImages }: Props) {
     }, []);
 
     function onWindowResize() {
-        if (!otherImagesRef.current) return;
+        if (!imageContainerRef.current) return;
 
         setOtherImagesOverflowing(
-            otherImagesRef.current.clientWidth <
-                otherImagesRef.current.scrollWidth,
+            imageContainerRef.current.clientWidth <
+                imageContainerRef.current.scrollWidth,
         );
     }
+
+    function scrollImages(left: boolean = false) {
+        if (!imageContainerRef.current) return;
+
+        const scrollLeft =
+            imageContainerRef.current.scrollLeft +
+            imageContainerRef.current.clientWidth * 0.5 * (left ? -1 : 1);
+
+        imageContainerRef.current.scrollLeft = scrollLeft;
+
+        const scrollRight =
+            imageContainerRef.current.scrollWidth -
+            (scrollLeft + imageContainerRef.current.clientWidth);
+
+        setAtScrollStart(scrollLeft <= 0);
+        setAtScrollEnd(scrollRight <= 0);
+    }
+
+    const showScrollLeftButton = otherImagesOverflowing && !atScrollStart;
+    const showScrollRightButton = otherImagesOverflowing && !atScrollEnd;
 
     return (
         <div className="images">
@@ -51,38 +73,46 @@ export default function Images({ mainImage, otherImages }: Props) {
             <div
                 className="other-images"
                 style={otherImages.length == 0 ? { display: 'none' } : {}}
-                ref={otherImagesRef}
             >
                 <div
-                    className="scroll-button next"
-                    onClick={() => {
-                        if (!otherImagesRef.current) return;
-                        otherImagesRef.current.scrollTo(
-                            otherImagesRef.current.scrollLeft + 50,
-                            0,
-                        );
-                    }}
-                ></div>
-                <div className="scroll-button previous"></div>
-
-                <img
-                    src={mainImage}
-                    alt="Project showcase image, main"
-                    loading="eager"
-                    onClick={() => setMainImageSrc(mainImage)}
-                    className={mainImage == mainImageSrc ? '' : 'dim'}
-                />
-
-                {otherImages.map((src) => (
+                    className={`scroll-button next ${showScrollRightButton ? 'show' : ''}`}
+                    onClick={() => scrollImages()}
+                >
                     <img
-                        key={src}
-                        src={src}
-                        onClick={() => setMainImageSrc(src)}
-                        loading="eager"
-                        alt="Project showcase image, auxilliary"
-                        className={src == mainImageSrc ? '' : 'dim'}
+                        src="/images/pointer_left.png"
+                        alt="Pointer arrow left"
                     />
-                ))}
+                </div>
+                <div
+                    className={`scroll-button previous ${showScrollLeftButton ? 'show' : ''}`}
+                    onClick={() => scrollImages(true)}
+                >
+                    <img
+                        src="/images/pointer_left.png"
+                        alt="Pointer arrow left"
+                    />
+                </div>
+
+                <div className="image-container" ref={imageContainerRef}>
+                    <img
+                        src={mainImage}
+                        alt="Project showcase image, main"
+                        loading="eager"
+                        onClick={() => setMainImageSrc(mainImage)}
+                        className={mainImage == mainImageSrc ? '' : 'dim'}
+                    />
+
+                    {otherImages.map((src) => (
+                        <img
+                            key={src}
+                            src={src}
+                            onClick={() => setMainImageSrc(src)}
+                            loading="eager"
+                            alt="Project showcase image, auxilliary"
+                            className={src == mainImageSrc ? '' : 'dim'}
+                        />
+                    ))}
+                </div>
             </div>
         </div>
     );
