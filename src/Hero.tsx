@@ -25,7 +25,7 @@ export default function Hero() {
             <div className="bg" ref={bgRef}></div>
             <div className="content">
                 <h1>Designer with focus withing layout and editorial.</h1>
-                <Button text="Contact Me"></Button>
+                <Button text="Contact Me" link="#contact"></Button>
                 <ArrowButton text="See Portfolio" link="#projects" />
             </div>
         </header>

@@ -1,3 +1,4 @@
+import Button from './Button';
 import { Project } from './types';
 
 export const projects: Project[] = [
@@ -9,6 +10,9 @@ export const projects: Project[] = [
                 <p>
                     <b>Description:</b> A course project in which we designed a
                     brand and visual identity for a fictional company.
+                </p>
+                <p>
+                    <Button text="Download Brand Guide" small />
                 </p>
             </>
         ),

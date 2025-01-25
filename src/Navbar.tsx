@@ -1,19 +1,25 @@
 import { useEffect, useRef, useState } from 'react';
 
-export default function Navbar() {
+interface Props {
+    onLinkClicked?: () => void;
+}
+
+export default function Navbar({ onLinkClicked = () => {} }: Props) {
     const navRef = useRef<HTMLDivElement | null>(null);
     const [showHamburger, setShowHamburger] = useState(false);
 
     useEffect(() => {
         window.addEventListener('scroll', onScroll);
 
-        const links = document.querySelectorAll('nav .hamburger-menu a');
-        links.forEach((link) => link.addEventListener('click', closeHambuger));
+        const links = document.querySelectorAll('nav a');
+        links.forEach((link) =>
+            link.addEventListener('click', onNavbarLinkClicked),
+        );
 
         return () => {
             window.removeEventListener('scroll', onScroll);
             links.forEach((link) =>
-                link.removeEventListener('click', closeHambuger),
+                link.removeEventListener('click', onNavbarLinkClicked),
             );
         };
     }, []);
@@ -25,8 +31,9 @@ export default function Navbar() {
         else navRef.current.classList.remove('occlude');
     };
 
-    function closeHambuger() {
+    function onNavbarLinkClicked() {
         setShowHamburger(false);
+        onLinkClicked();
     }
 
     return (

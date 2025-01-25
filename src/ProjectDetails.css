@@ -11,6 +11,7 @@
     z-index: 1;
     padding: 10em;
     padding-right: 8em;
+    padding-bottom: 4em;
     display: flex;
     justify-content: stretch;
     flex-wrap: wrap;
@@ -60,6 +61,7 @@
 @media screen and (max-width: 1500px) {
     #project-details {
         padding: 10em calc(5vw - 1em);
+        padding-bottom: 4em;
     }
 }
 

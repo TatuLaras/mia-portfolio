@@ -21,7 +21,7 @@ export default function Images({ mainImage, otherImages }: Props) {
         const img = new Image();
         img.onload = (e: any) =>
             setMainImageAspectRatio(
-                Math.max(1.3, e.target.naturalWidth / e.target.naturalHeight),
+                Math.max(1.4, e.target.naturalWidth / e.target.naturalHeight),
             );
 
         img.src = mainImage;
@@ -40,6 +40,14 @@ export default function Images({ mainImage, otherImages }: Props) {
             imageContainerRef.current.clientWidth <
                 imageContainerRef.current.scrollWidth,
         );
+
+        const scrollRight =
+            imageContainerRef.current.scrollWidth -
+            (imageContainerRef.current.scrollLeft +
+                imageContainerRef.current.clientWidth);
+
+        setAtScrollStart(imageContainerRef.current.scrollLeft <= 0);
+        setAtScrollEnd(scrollRight <= 0);
     }
 
     function scrollImages(left: boolean = false) {
