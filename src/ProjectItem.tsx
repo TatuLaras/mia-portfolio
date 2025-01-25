@@ -20,9 +20,7 @@ export default function ProjectItem({
         >
             <div
                 className="bg"
-                style={
-                    { '--img': `url('${project.mainImage}')` } as CSSProperties
-                }
+                style={{ '--img': `url('${project.thumb}')` } as CSSProperties}
             ></div>
             <h2>{project.shortTitle}</h2>
         </article>

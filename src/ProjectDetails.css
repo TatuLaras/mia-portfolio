@@ -6,7 +6,6 @@
     right: 0;
     bottom: 0;
     transition: transform 0.2s ease-in-out;
-    transition-delay: 0.1s;
     transform: translateX(-100vw);
     z-index: 1;
     padding: 10em;
@@ -14,6 +13,7 @@
     display: flex;
     justify-content: stretch;
     flex-wrap: wrap;
+    overflow: auto;
 }
 
 #project-details > * {
@@ -68,7 +68,6 @@
         justify-content: flex-start;
         align-items: stretch;
         flex-wrap: nowrap;
-        overflow: auto;
         padding: 10em 2em;
         transform: translateY(100vw);
     }

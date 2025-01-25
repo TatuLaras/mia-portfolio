@@ -21,7 +21,7 @@ export default function Images({ mainImage, otherImages }: Props) {
         const img = new Image();
         img.onload = (e: any) =>
             setMainImageAspectRatio(
-                Math.max(1.4, e.target.naturalWidth / e.target.naturalHeight),
+                Math.max(1.3, e.target.naturalWidth / e.target.naturalHeight),
             );
 
         img.src = mainImage;

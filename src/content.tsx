@@ -12,6 +12,7 @@ export const projects: Project[] = [
                 </p>
             </>
         ),
+        thumb: '/images/thumb/branding.jpg',
         mainImage: '/images/sushi_club_slogan_slide.jpg',
         otherImages: [
             '/images/Sushi_Club_Mockup_Compilement.jpg',
@@ -39,6 +40,7 @@ export const projects: Project[] = [
                 </p>
             </>
         ),
+        thumb: '/images/thumb/tea_thumb.jpg',
         mainImage: '/images/Cardboard_Tube_Mockup_5_16by9.jpg',
         otherImages: [
             '/images/packaging label design.png',
@@ -66,6 +68,7 @@ export const projects: Project[] = [
                 </p>
             </>
         ),
+        thumb: '/images/thumb/editorial.jpg',
         mainImage: '/images/Assignment 5_Editorial Typography Layout.jpg',
         otherImages: [],
     },
@@ -85,6 +88,7 @@ export const projects: Project[] = [
                 </p>
             </>
         ),
+        thumb: '/images/thumb/creative.jpg',
         mainImage:
             '/images/Assignment 0_ Create Your First Digital Design-01.jpg',
         otherImages: [],
@@ -108,6 +112,7 @@ export const projects: Project[] = [
                 </p>
             </>
         ),
+        thumb: '/images/thumb/promotional.jpg',
         mainImage: '/images/Promotional Flyer Design.jpg',
         otherImages: [],
     },
@@ -129,6 +134,7 @@ export const projects: Project[] = [
                 </p>
             </>
         ),
+        thumb: '/images/thumb/magazine.jpg',
         mainImage: '/images/OM Uppg 3 - Magasinomslag.jpg',
         otherImages: [],
     },
@@ -151,6 +157,7 @@ export const projects: Project[] = [
                 </p>
             </>
         ),
+        thumb: '/images/thumb/ui.jpg',
         mainImage: '/images/app/Android Medium - 1.jpg',
         otherImages: [
             '/images/app/Android Medium - 11.jpg',
@@ -181,6 +188,7 @@ export const projects: Project[] = [
                 </p>
             </>
         ),
+        thumb: '/images/thumb/illustrated.jpg',
         mainImage: '/images/OM uppg 5 . Filmaffisch.jpg',
         otherImages: [],
     },
@@ -203,6 +211,7 @@ export const projects: Project[] = [
                 </p>
             </>
         ),
+        thumb: '/images/thumb/logo.jpg',
         mainImage:
             '/images/Assignment 6_Typography Exploration in Branding-03.jpg',
         otherImages: [],
