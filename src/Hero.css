@@ -30,7 +30,8 @@ header .bg {
 }
 
 header h1 {
-    font-size: 3rem;
+    font-size: clamp(2rem, 6vw, 3rem);
+    padding: 0 1em;
     font-weight: 400;
     text-align: center;
     max-width: 20em;

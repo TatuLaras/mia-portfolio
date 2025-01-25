@@ -8,6 +8,7 @@
     justify-content: flex-end;
     align-items: flex-start;
     overflow: hidden;
+    user-select: none;
 }
 
 .project-item,
@@ -22,6 +23,7 @@
 .project-item .bg {
     background-image: var(--img);
     background-size: cover;
+    background-position: center;
     position: absolute;
     top: 0;
     left: 0;

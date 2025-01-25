@@ -3,7 +3,8 @@ nav {
     top: 0;
     left: 0;
     right: 0;
-    z-index: 1;
+    z-index: 3;
+    user-select: none;
 }
 
 nav::before {
@@ -36,12 +37,97 @@ nav ul {
     left: -2rem;
 }
 
-#name a {
+nav .name a {
     text-decoration: none;
 }
 
-#name {
+nav .name {
+    text-decoration: none;
     font-family: 'Victor Mono Italic';
     font-size: 2rem;
     font-weight: 700;
+}
+
+.hamburger-menu {
+    display: none;
+    padding: 2em 3em;
+    padding-right: 2em;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hamburger-menu .name {
+    font-size: 1.6rem;
+}
+
+.hamburger-menu ul {
+    position: fixed;
+    margin: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--color-darkblue);
+    transform: translateY(-100vh);
+    transition: transform 0.2s ease-in-out;
+    z-index: -1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 1.6rem;
+    gap: 1.6em;
+    font-weight: 600;
+}
+
+.hamburger-menu ul.show {
+    transform: none;
+}
+
+.hamburger-button {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
+    width: 1.8em;
+    height: 1.2em;
+    padding: 0.6em;
+    cursor: pointer;
+    position: relative;
+}
+
+.hamburger-button.x div:first-child {
+    display: none;
+}
+
+.hamburger-button.x div:nth-child(2) {
+    transform: rotate(45deg);
+}
+
+.hamburger-button.x div:nth-child(3) {
+    transform: rotate(-45deg);
+}
+
+.hamburger-button.x div {
+    position: absolute;
+    left: 0.6em;
+    right: 0.6em;
+    top: 1.2em;
+}
+
+.hamburger-button div {
+    background-color: white;
+    height: 3px;
+    border-radius: 2px;
+    transition: transform 0.2s ease-out;
+}
+
+@media screen and (max-width: 1050px) {
+    .regular-menu {
+        display: none;
+    }
+
+    .hamburger-menu {
+        display: flex;
+    }
 }

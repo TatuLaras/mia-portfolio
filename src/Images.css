@@ -1,0 +1,55 @@
+.other-images img {
+    cursor: pointer;
+    object-fit: contain;
+}
+
+.other-images img.dim {
+    filter: brightness(50%);
+    transition: filter 0.2s ease-out;
+}
+
+.other-images img:hover {
+    filter: none;
+}
+
+.images {
+    flex: 1.8;
+    min-width: 40em;
+    user-select: none;
+}
+
+.images > img {
+    width: 100%;
+    object-fit: contain;
+}
+
+.other-images {
+    height: 6em;
+    display: flex;
+    align-items: stretch;
+    gap: 1em;
+    margin-top: 1em;
+    overflow-x: hidden;
+    position: relative;
+}
+
+.scroll-button {
+    position: absolute;
+    width: 4em;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.scroll-button.previous {
+    left: 0;
+    /* background: linear-gradient(90deg, var(--color-darkblue), transparent); */
+    background-color: red;
+}
+
+.scroll-button.next {
+    right: 0;
+    background-color: red;
+    /* background: linear-gradient(-90deg, var(--color-darkblue), transparent); */
+}

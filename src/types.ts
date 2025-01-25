@@ -1,4 +1,5 @@
 export interface Project {
+    shortTitle: string;
     title: string;
     description: JSX.Element | string;
     mainImage: string;

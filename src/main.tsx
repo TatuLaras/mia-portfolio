@@ -12,6 +12,8 @@ import './ArrowButton.css';
 import './Button.css';
 import './Contact.css';
 import './Footer.css';
+import './ProjectDetails.css';
+import './Images.css';
 
 import App from './App.tsx';
 

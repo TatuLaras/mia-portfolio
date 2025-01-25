@@ -37,3 +37,19 @@ section {
     padding-top: 2.4em;
     padding-bottom: 6em;
 }
+
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-corner,
+::-webkit-scrollbar-track-piece,
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color-pastelblue);
+    border-radius: 3px;
+}
