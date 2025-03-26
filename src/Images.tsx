@@ -10,7 +10,7 @@ export default function Images({ mainImage, otherImages }: Props) {
     const [mainImageSrc, setMainImageSrc] = useState('');
 
     const imageContainerRef = useRef<HTMLDivElement | null>(null);
-    const [otherImagesOverflowing, setOtherImagesOverflowing] = useState(false);
+    const [otherImagesOverflowing, setOtherImagesOverflowing] = useState(true);
 
     const [atScrollStart, setAtScrollStart] = useState(true);
     const [atScrollEnd, setAtScrollEnd] = useState(false);
@@ -29,11 +29,16 @@ export default function Images({ mainImage, otherImages }: Props) {
     }, [mainImage]);
 
     useEffect(() => {
-        window.addEventListener('resize', onWindowResize);
-        return () => window.removeEventListener('resize', onWindowResize);
+        window.addEventListener('resize', checkImageBounds);
+        return () => window.removeEventListener('resize', checkImageBounds);
     }, []);
 
-    function onWindowResize() {
+    // useEffect(() => {
+    //     checkImageBounds();
+    //     checkImageBounds();
+    // }, [otherImages, mainImage]);
+
+    function checkImageBounds() {
         if (!imageContainerRef.current) return;
 
         setOtherImagesOverflowing(

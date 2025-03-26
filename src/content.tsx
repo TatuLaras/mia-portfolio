@@ -12,7 +12,11 @@ export const projects: Project[] = [
                     brand and visual identity for a fictional company.
                 </p>
                 <p>
-                    <Button text="Download Brand Guide" small />
+                    <Button
+                        text="Download Brand Guide"
+                        link="/downloadable/Sushi_Club_Brand_Manual_Mia_Mantylampi.pdf"
+                        small
+                    />
                 </p>
             </>
         ),
